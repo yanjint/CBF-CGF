@@ -158,12 +158,7 @@ for it=1:niter    % 40
         KK = (sita{1}(i,i))^(-1)*G*G' + (sita{2}(i,i))^(-1)*S2;
     end
     KK = (KK+KK')/2;
-
-
     Y = solve_F(KK, Y);
-
-    [~, Y_1] = max(Y, [], 2);
-
     YYYY = (Y * (Y' * Y*sita{1})^(-1)) * Y'+(Y * (Y' * Y*sita{2})^(-1)) * Y' ;
      obj(it) = get_obj(Y, a, p, W, KF, Graph,h,sita,lambda);
    if it>2 && (obj(it) -obj(it-1)) / obj(it-1) < 1e-4
