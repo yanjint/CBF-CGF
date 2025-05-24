@@ -7,7 +7,7 @@ addpath(genpath('./datasets'))
 addpath('./Funs');
 addpath('./finchpp')
 data = {'ORL'};  
-orders = [5];    % filter
+orders = 5;    % filter
 k = 5;           % o
 lambda = [1]
 for i= 1:length(lambda)
@@ -23,7 +23,7 @@ for i= 1:length(lambda)
         
         c = length(unique(Y));   
         [G, K, F, evs]=prepare(X, k, c);
-        KF = cross_con(K, F, 1);
+        KF = cross_con(K, F, orders);
         tic;
         [Y_g, y0, it, obj] = main_max(KF, G , c, c, 40, eps - evs,lambda(i));
         total_time = toc;
