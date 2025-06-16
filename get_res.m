@@ -9,7 +9,7 @@ addpath('./finchpp')
 data = {'ORL'};  
 orders = 5;    % filter
 k = 5;           % o
-lambda = [1]
+lambda = [1];
 for i= 1:length(lambda)
     for idx = 1: length(data) 
         load(data{idx})
