@@ -8,11 +8,7 @@ addpath('./Funs');
 addpath('./finchpp')
 data = {'ORL'};  
 orders = 5;    % filter
-<<<<<<< HEAD
 k = 5;           % o
-lambda = [1];
-=======
-k = 5;           
 lambda = [1];
 for i= 1:length(lambda)
     for idx = 1: length(data) 
